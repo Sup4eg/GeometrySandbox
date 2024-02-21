@@ -9,23 +9,23 @@ DEFINE_LOG_CATEGORY_STATIC(LogBasedGeometry, All, All)
 // Sets default values
 ABaseGeometryActor::ABaseGeometryActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+  // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+  PrimaryActorTick.bCanEverTick = true;
 
-	BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>("BaseMesh");
-	SetRootComponent(BaseMesh);
+  BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>("BaseMesh");
+  SetRootComponent(BaseMesh);
 }
 
 // Called when the game starts or when spawned
 void ABaseGeometryActor::BeginPlay()
 {
-	Super::BeginPlay();
+  Super::BeginPlay();
 
-	InitialLocation = GetActorLocation();
+  InitialLocation = GetActorLocation();
 
-	//printTransform();
-	//printStringType();
-	//printTypes();
+  //PrintTransform();
+  //PrintStringType();
+  //PrintTypes();
 
 
 }
@@ -33,17 +33,29 @@ void ABaseGeometryActor::BeginPlay()
 // Called every frame
 void ABaseGeometryActor::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-
-	FVector CurrentLocation = GetActorLocation();
-	float time = GetWorld()->GetTimeSeconds();
-	CurrentLocation.Z = InitialLocation.Z + Amplitude * FMath::Sin(Frequency * time);
-	SetActorLocation(CurrentLocation);
+  Super::Tick(DeltaTime);
+  HandleMovement();
 }
 
 
 
-void ABaseGeometryActor::printTypes()
+void ABaseGeometryActor::HandleMovement()
+{
+  switch (GeometryData.MoveType) {
+  case EMovementType::Sin:
+  {
+	FVector CurrentLocation = GetActorLocation();
+	float Time = GetWorld()->GetTimeSeconds();
+	CurrentLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * Time);
+	SetActorLocation(CurrentLocation);
+	break;
+  }
+  case EMovementType::Static: break;
+  default: break;
+  }
+}
+
+void ABaseGeometryActor::PrintTypes()
 {
   UE_LOG(LogBasedGeometry, Warning, TEXT("Actor name %s"), *GetName());
   UE_LOG(LogBasedGeometry, Warning, TEXT("Weapons num: %d, kills num %i"), WeaponsNum, KillsNum);
@@ -52,7 +64,7 @@ void ABaseGeometryActor::printTypes()
   UE_LOG(LogBasedGeometry, Warning, TEXT("HasWeapon: %d"), static_cast<int>(HasWeapon));
 }
 
-void ABaseGeometryActor::printStringType() {
+void ABaseGeometryActor::PrintStringType() {
   FString name = "John Connor";
   UE_LOG(LogBasedGeometry, Display, TEXT("Name: %s"), *name);
 
@@ -67,7 +79,7 @@ void ABaseGeometryActor::printStringType() {
   GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, stat, true, FVector2D(1.5f, 1.5f));
 }
 
-void ABaseGeometryActor::printTransform()
+void ABaseGeometryActor::PrintTransform()
 {
   FTransform Transform = GetActorTransform();
   FVector Location = Transform.GetLocation();
