@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\UEProjects\\CppWithUnreal\\GeometrySandbox\\Source\\GeometrySandbox\\GeometrySandbox.Build.cs",
+		"D:\\UEProjects\\CppWithUnreal\\GeometrySandbox\\Source\\GeometrySandbox.Target.cs",
+		"D:\\UEProjects\\CppWithUnreal\\GeometrySandbox\\Source\\GeometrySandboxEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}

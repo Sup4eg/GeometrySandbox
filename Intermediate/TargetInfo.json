@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GeometrySandbox",
+			"Path": "D:\\UEProjects\\CppWithUnreal\\GeometrySandbox\\Source\\GeometrySandbox.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GeometrySandboxEditor",
+			"Path": "D:\\UEProjects\\CppWithUnreal\\GeometrySandbox\\Source\\GeometrySandboxEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
