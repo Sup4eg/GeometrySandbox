@@ -3,6 +3,8 @@
 
 #include "BaseGeometryActor.h"
 #include "Engine/Engine.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "TimerManager.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogBasedGeometry, All, All)
 
@@ -27,7 +29,8 @@ void ABaseGeometryActor::BeginPlay()
   //PrintStringType();
   //PrintTypes();
 
-
+  SetColor(GeometryData.Color);
+  GetWorldTimerManager().SetTimer(TimerHandle, this, &ABaseGeometryActor::OnTimerFired, GeometryData.TimerRate, true);
 }
 
 // Called every frame
@@ -36,7 +39,6 @@ void ABaseGeometryActor::Tick(float DeltaTime)
   Super::Tick(DeltaTime);
   HandleMovement();
 }
-
 
 
 void ABaseGeometryActor::HandleMovement()
@@ -52,6 +54,14 @@ void ABaseGeometryActor::HandleMovement()
   }
   case EMovementType::Static: break;
   default: break;
+  }
+}
+
+void ABaseGeometryActor::SetColor(const FLinearColor& Color)
+{
+  UMaterialInstanceDynamic* DynMaterial = BaseMesh->CreateAndSetMaterialInstanceDynamic(0);
+  if (DynMaterial) {
+	DynMaterial->SetVectorParameterValue("Color", Color);
   }
 }
 
@@ -93,5 +103,18 @@ void ABaseGeometryActor::PrintTransform()
   UE_LOG(LogBasedGeometry, Warning, TEXT("Scale %s"), *Scale.ToString());
 
   UE_LOG(LogBasedGeometry, Error, TEXT("Human transform %s"), *Transform.ToHumanReadableString());
+}
+
+void ABaseGeometryActor::OnTimerFired()
+{
+  if (++TimerCount <= MaxTimerCount) {
+	const FLinearColor NewColor = FLinearColor::MakeRandomColor();
+	UE_LOG(LogBasedGeometry, Display, TEXT("TimerCount: %i, Color to set up: %s"), TimerCount, *NewColor.ToString());
+	SetColor(NewColor);
+  }
+  else {
+	UE_LOG(LogBasedGeometry, Warning, TEXT("Timer has been stoppped!"));
+	GetWorldTimerManager().ClearTimer(TimerHandle);
+  }
 }
 

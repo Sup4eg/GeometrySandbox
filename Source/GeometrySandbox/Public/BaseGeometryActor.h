@@ -26,6 +26,12 @@ struct FGeometryData {
 
   UPROPERTY(EditAnywhere, Category = "Movement")
   EMovementType MoveType = EMovementType::Static;
+
+  UPROPERTY(EditAnywhere, Category = "Design")
+  FLinearColor Color = FLinearColor::Black;
+
+  UPROPERTY(EditAnywhere, Category = "Design")
+  float TimerRate = 3.0f;
 };
 
 UCLASS()
@@ -68,9 +74,15 @@ public:
 
 private:
   FVector InitialLocation;
+  FTimerHandle TimerHandle;
 
+  const int32 MaxTimerCount = 5;
+  int32 TimerCount = 0;
+
+  void SetColor(const FLinearColor& Color);
   void HandleMovement();
   void PrintTypes();
   void PrintStringType();
   void PrintTransform();
+  void OnTimerFired();
 };

@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeGeometrySandbox_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xD04E0930,
+				0x297F8BF0,
 				0xCDD2F072,
 				METADATA_PARAMS(nullptr, 0)
 			};
