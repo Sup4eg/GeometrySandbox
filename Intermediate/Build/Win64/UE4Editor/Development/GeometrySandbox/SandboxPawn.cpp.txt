@@ -1,0 +1,3 @@
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Development\GeometrySandbox\Definitions.GeometrySandbox.h
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Source\GeometrySandbox\Public\SandboxPawn.h
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Inc\GeometrySandbox\SandboxPawn.generated.h

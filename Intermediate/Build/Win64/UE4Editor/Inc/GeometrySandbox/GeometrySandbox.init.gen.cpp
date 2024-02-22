@@ -25,8 +25,8 @@ void EmptyLinkFunctionForGeneratedCodeGeometrySandbox_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x545F4171,
-				0x635D2E22,
+				0xB13EB1F3,
+				0x97DDEEF0,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
