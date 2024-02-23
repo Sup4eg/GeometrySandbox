@@ -7,3 +7,5 @@ D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.gen
 D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Inc\GeometrySandbox\GeometrySandboxGameModeBase.generated.h
 D:\UEProjects\CppWithUnreal\GeometrySandbox\Source\GeometrySandbox\Public\SandboxPawn.h
 D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Inc\GeometrySandbox\SandboxPawn.generated.h
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Source\GeometrySandbox\Public\SandboxPlayerController.h
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Inc\GeometrySandbox\SandboxPlayerController.generated.h

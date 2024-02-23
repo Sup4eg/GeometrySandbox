@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeGeometrySandboxGameModeBase() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGeometrySandboxGameModeBase_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "GeometrySandboxGameModeBase.h" },
 		{ "ModuleRelativePath", "GeometrySandboxGameModeBase.h" },
@@ -74,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeGeometrySandboxGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGeometrySandboxGameModeBase, 1034481211);
+	IMPLEMENT_CLASS(AGeometrySandboxGameModeBase, 472787481);
 	template<> GEOMETRYSANDBOX_API UClass* StaticClass<AGeometrySandboxGameModeBase>()
 	{
 		return AGeometrySandboxGameModeBase::StaticClass();

@@ -1,0 +1,5 @@
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Development\GeometrySandbox\Definitions.GeometrySandbox.h
+D:\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+D:\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Source\GeometrySandbox/Public/SandboxPlayerController.h
+D:\UEProjects\CppWithUnreal\GeometrySandbox\Intermediate\Build\Win64\UE4Editor\Inc\GeometrySandbox\SandboxPlayerController.generated.h
