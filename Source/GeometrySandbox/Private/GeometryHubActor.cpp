@@ -19,14 +19,8 @@ void AGeometryHubActor::BeginPlay()
 	Super::BeginPlay();
 	//DoActorSpawn1();
 	//DoActorSpawn2();
-	DoActorSpawn3();
-
-}
-
-// Called every frame
-void AGeometryHubActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
+	//DoActorSpawn3();
+	DoActorSpawn4();
 
 }
 
@@ -79,6 +73,17 @@ void AGeometryHubActor::DoActorSpawn3()
   }
 }
 
+void AGeometryHubActor::DoActorSpawn4()
+{
+  if (!GetWorld()) return;
+  FTransform GeometryTransform = FTransform(FRotator::ZeroRotator, FVector(700.f, 300.f, 300.f));
+  NonePropertyActor = GetWorld()->SpawnActor<ABaseGeometryActor>(GeometryClass, GeometryTransform);
+
+  GeometryTransform = FTransform(FRotator::ZeroRotator, FVector(700.f, 700.f, 300.f));
+  PropertyActor = GetWorld()->SpawnActor<ABaseGeometryActor>(GeometryClass, GeometryTransform);
+
+}
+
 void AGeometryHubActor::OnColorChanged(const FLinearColor& Color, const FString& Name)
 {
   UE_LOG(LogGeometryHub, Warning, TEXT("Actor name: %s Color %s"), *Name, *Color.ToString());
@@ -95,5 +100,15 @@ void AGeometryHubActor::OnTimerFinished(AActor* Actor)
 
   Geometry->Destroy();
   //Geometry->SetLifeSpan(2.0f);
+}
+
+// Called every frame
+void AGeometryHubActor::Tick(float DeltaTime)
+{
+  Super::Tick(DeltaTime);
+
+  UE_LOG(LogGeometryHub, Warning, TEXT("property pointer %i, is valid %i"), PropertyActor != nullptr, IsValid(PropertyActor));
+  UE_LOG(LogGeometryHub, Error, TEXT("none property pointer %i, is valid %i"), NonePropertyActor != nullptr, IsValid(NonePropertyActor));
+
 }
 

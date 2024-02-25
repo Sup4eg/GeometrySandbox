@@ -76,7 +76,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGeometryHubActor); \
 
 #define GeometrySandbox_Source_GeometrySandbox_Public_GeometryHubActor_h_29_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__GeometryClass() { return STRUCT_OFFSET(AGeometryHubActor, GeometryClass); } \
-	FORCEINLINE static uint32 __PPO__GeometryPayloads() { return STRUCT_OFFSET(AGeometryHubActor, GeometryPayloads); }
+	FORCEINLINE static uint32 __PPO__GeometryPayloads() { return STRUCT_OFFSET(AGeometryHubActor, GeometryPayloads); } \
+	FORCEINLINE static uint32 __PPO__PropertyActor() { return STRUCT_OFFSET(AGeometryHubActor, PropertyActor); }
 
 
 #define GeometrySandbox_Source_GeometrySandbox_Public_GeometryHubActor_h_26_PROLOG
